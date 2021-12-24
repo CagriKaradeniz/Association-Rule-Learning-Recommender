@@ -1,10 +1,9 @@
 # Association-Rule-Learning-Recommender
-![This is an image](https://github.com/CagriKaradeniz/12-month-Prediction-of-Customer-Lifetime-Value-model/blob/main/Customer-Lifetime-Value-Template-22.jpg?raw=true)
+![This is an image](https://github.com/CagriKaradeniz/Association-Rule-Learning-Recommender/blob/main/image.jpg?raw=true)
 # Business problem
-An e-commerce company wants to calculate customer lifetime values for each customers and predict future 12 months sales in this market for each customers.
-Customer lifetime value is the total worth to a business of a customer over the whole period of their relationship. 
-It’s an important metric as it costs less to keep existing customers than it does to acquire new ones, 
-so increasing the value of your existing customers is a great way to drive growth.
+An e-commerce company wants to create products recommendation system for their customers. 
+Company wants to create an Association Rule learning algorithm for only German customers.
+
 # Dataset
 Excel dataset includes some this e-commerce company's customers information in 2010-2011.
 Dataset columns summary:
