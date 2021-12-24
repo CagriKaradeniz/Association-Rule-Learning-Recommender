@@ -1,12 +1,11 @@
-#********************ÖDEV1***********************
+
 import pandas as pd
 import numpy as np
 import Utils_cagri as util
 from mlxtend.frequent_patterns import apriori, association_rules
 pd.set_option('display.max_columns', 20)
 pd.set_option('display.expand_frame_repr', False)
-#GÖREV1
-#Veri Ön İşleme İşlemlerini Gerçekleştiriniz
+#loading data
 df=pd.read_excel("online_retail_II.xlsx",sheet_name="Year 2010-2011")
 data=df.copy()
 
@@ -17,8 +16,7 @@ data.head()
 data.describe().T
 util.dataset_ozet(data)
 
-#GÖREV2
-#Germany müşterileri üzerinden birliktelik kuralları üretiniz.
+#Selecting German customers
 
 data_ger=data[data["Country"]=="Germany"]
 data_ger.shape
@@ -28,8 +26,7 @@ util.dataset_ozet(data_ger)
 
 ger_rules=util.kural_olustur(data,country="Germany")
 
-#Görev 3:
-#ID'leri verilen ürünlerin isimleri nelerdir?
+#Analyzing random three user
 
 #Kullanıcı 1 ürün id'si: 21987
 #Kullanıcı 2 ürün id'si: 23235
@@ -39,13 +36,11 @@ id_list=[21987,23235,22747]
 
 
 
-#Görev 4:
-#Sepetteki kullanıcılar için ürün önerisi yapınız.
+#Recommendation with ARL
 for k in id_list:
     rec=util.arl_recommender(ger_rules,k,2)
     print(f"{k} İçin recommended list: {rec}")
-#Görev 5:
-#Önerilen ürünlerin isimleri nelerdir?
+
 for k in id_list:
     rec=util.arl_recommender(ger_rules,k,2)
     print(f"{util.check_id(data_ger,k)} İçin recommended list: {[util.check_id(data_ger,i) for i in rec]}")
